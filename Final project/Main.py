@@ -190,6 +190,3 @@ if __name__ == "__main__":
     SecondThread()
 
 
-# Frontend/GUI.py
-print("GUI.py is being imported!")
-# ... rest of your GUI.py code ...
