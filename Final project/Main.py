@@ -1,13 +1,13 @@
 from Frontend.GUI import (
-GraphicalUserInterface,
-SetAssistantStatus,
-ShowTextToScreen,
-TempDirectoryPath,
-SetMicrophoneStatus,
-AnswerModifier,
-QueryModifier,
-GetMicrophoneStatus,
-GetAssistantStatus )
+    GraphicalUserInterface,
+    SetAssistantStatus,
+    ShowTextToScreen,
+    TempDirectoryPath,
+    SetMicrophoneStatus,
+    AnswerModifier,
+    QueryModifier,
+    GetMicrophoneStatus,
+    GetAssistantStatus )          
 from Backend.Model import FirstLayerDMM
 from Backend.RealtimeSearchEngine import RealtimeSearchEngine
 from Backend.Automation import Automation
@@ -25,10 +25,11 @@ import os
 env_vars = dotenv_values(".env")
 Username = env_vars.get("Username")
 Assistantname = env_vars.get("Assistantname")
-DefaultMessage = f'''{Username}: Hello {Assistantname}. How are you?
+DefaultMessage = f'''{Username}: Hello {Assistantname}, How are you?
 {Assistantname}: Welcome {Username}. I am doing well. How may I help you?'''
 subprocesses = []
 Functions = ["open", "close", "play", "system", "content", "google search", "youtube search"]
+
 
 def ShowDefaultChatIfNoChats():
     File = open(r'Data\ChatLog.json', "r", encoding='utf-8')
@@ -188,5 +189,4 @@ if __name__ == "__main__":
     thread2 = threading.Thread(target=FirstThread, daemon=True)
     thread2.start()
     SecondThread()
-
 
